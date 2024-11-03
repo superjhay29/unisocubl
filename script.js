@@ -1,5 +1,5 @@
 const adminPassword = "jhayjhayservices.com"; // Admin password
-let userCredits = 850; // Initial credits for the user
+let userCredits = localStorage.getItem('userCredits') ? parseInt(localStorage.getItem('userCredits')) : 850; // Initial credits for the user
 
 function login() {
     const password = document.getElementById('adminPassword').value;
@@ -21,9 +21,13 @@ function updateCreditsDisplay() {
 function subtractCredits() {
     if (userCredits >= 10) {
         userCredits -= 10;
+        localStorage.setItem('userCredits', userCredits); // Save updated credits to local storage
         updateCreditsDisplay();
         document.getElementById('message').textContent = "Download initiated.";
     } else {
         document.getElementById('message').textContent = "Insufficient credits for this download.";
     }
 }
+
+// Initialize credits display on page load
+updateCreditsDisplay();
