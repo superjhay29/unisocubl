@@ -1,5 +1,10 @@
 const adminPassword = "jhayjhayservices.com"; // Admin password
-let userCredits = localStorage.getItem('userCredits') ? parseInt(localStorage.getItem('userCredits')) : 850; // Initial credits for the user
+
+// Initialize user credits if not already set
+if (!localStorage.getItem('userCredits')) {
+    localStorage.setItem('userCredits', 850); // Set initial credits to 850 if not already set
+}
+let userCredits = parseInt(localStorage.getItem('userCredits')); // Retrieve user credits
 
 function login() {
     const password = document.getElementById('adminPassword').value;
