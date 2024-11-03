@@ -1,10 +1,14 @@
 const adminPassword = "jhayjhayservices.com"; // Admin password
 
-// Initialize user credits if not already set
-if (!localStorage.getItem('userCredits')) {
-    localStorage.setItem('userCredits', 850); // Set initial credits to 850 if not already set
+// Function to get cookie value by name
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
 }
-let userCredits = parseInt(localStorage.getItem('userCredits')); // Retrieve user credits
+
+// Initialize user credits if not already set
+let userCredits = parseInt(getCookie('userCredits')) || 850; // Set initial credits to 850 if not already set
 
 function login() {
     const password = document.getElementById('adminPassword').value;
@@ -26,7 +30,7 @@ function updateCreditsDisplay() {
 function subtractCredits() {
     if (userCredits >= 10) {
         userCredits -= 10;
-        localStorage.setItem('userCredits', userCredits); // Save updated credits to local storage
+        document.cookie = `userCredits=${userCredits}; path=/;`; // Save updated credits to cookies
         updateCreditsDisplay();
         document.getElementById('message').textContent = "Download initiated.";
     } else {
