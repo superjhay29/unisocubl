@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Download</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file if needed -->
     <style>
+        /* Styles for the page */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -26,11 +26,17 @@
         button:hover {
             background-color: #0056b3;
         }
-        .container {
-            display: none; /* Initially hidden until logged in */
-        }
-        .login {
-            margin-bottom: 20px;
+        #cookieConsent {
+            display: none; /* Initially hidden */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -42,65 +48,18 @@
         <p id="loginMessage"></p>
     </div>
 
-    <div class="container" id="downloadContainer">
+    <div class="container" id="downloadContainer" style="display: none;">
         <h1>File Download</h1>
         <p id="creditDisplay"></p>
-
-        <a href="downloads/Infinix_Hot_12_Play.zip" download>
-            <button onclick="subtractCredits()">Download Infinix Hot 12 Play</button>
-        </a>
-        <a href="downloads/Realme_Note_50.zip" download>
-            <button onclick="subtractCredits()">Download Realme Note 50</button>
-        </a>
-        <a href="downloads/Realme_C53.zip" download>
-            <button onclick="subtractCredits()">Download Realme C53</button>
-        </a>
-        <a href="downloads/Realme_C51.zip" download>
-            <button onclick="subtractCredits()">Download Realme C51</button>
-        </a>
-        <a href="downloads/Realme_C35.zip" download>
-            <button onclick="subtractCredits()">Download Realme C35</button>
-        </a>
-        <a href="downloads/Realme_C33.zip" download>
-            <button onclick="subtractCredits()">Download Realme C33</button>
-        </a>
-        <a href="downloads/Realme_C31.zip" download>
-            <button onclick="subtractCredits()">Download Realme C31</button>
-        </a>
-        <a href="downloads/Tecno_Spark_8C.zip" download>
-            <button onclick="subtractCredits()">Download Tecno Spark 8C</button>
-        </a>
-        <a href="downloads/Infinix_Hot_12_Pro.zip" download>
-            <button onclick="subtractCredits()">Download Infinix Hot 12 Pro</button>
-        </a>
-        <a href="downloads/Infinix_Hot_30i.zip" download>
-            <button onclick="subtractCredits()">Download Infinix Hot 30i</button>
-        </a>
-        <a href="downloads/Itel_Vision_3.zip" download>
-            <button onclick="subtractCredits()">Download Itel Vision 3</button>
-        </a>
-        <a href="downloads/Itel_Vision_3_Plus.zip" download>
-            <button onclick="subtractCredits()">Download Itel Vision 3 Plus</button>
-        </a>
-        <a href="downloads/Itel_S23.zip" download>
-            <button onclick="subtractCredits()">Download Itel S23</button>
-        </a>
-        <a href="downloads/Itel_P40+.zip" download>
-            <button onclick="subtractCredits()">Download Itel P40+</button>
-        </a>
-        <a href="downloads/Universal_Unlock.zip" download>
-            <button onclick="subtractCredits()">Download Universal Unlock</button>
-        </a>
-        <a href="downloads/Itel_Vision_5.zip" download>
-            <button onclick="subtractCredits()">Download Itel Vision 5</button>
-        </a>
-        <a href="downloads/Realme_C21y.zip" download>
-            <button onclick="subtractCredits()">Download Realme C21y</button>
-        </a>
-        
+        <button onclick="subtractCredits()">Download File</button>
         <p id="message"></p>
     </div>
 
-    <script src="script.js"></script> <!-- Link to your external JavaScript file -->
+    <div id="cookieConsent">
+        This website uses cookies to ensure you get the best experience. 
+        <button id="acceptCookies">Accept Cookies</button>
+    </div>
+
+    <script src="script.js"></script> <!-- External JavaScript file -->
 </body>
 </html>
