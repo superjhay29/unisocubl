@@ -4,41 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Download</title>
-    <style>
-        /* Styles for the page */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f4;
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #cookieConsent {
-            display: none; /* Initially hidden */
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            z-index: 1000;
-        }
-    </style>
+<style>
+
+body {
+
+font-family: Arial, sans-serif;
+
+background-color: #f4f4f4;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+height: 100vh;
+
+margin: 0;
+
+}
+
+.container {
+
+text-align: center;
+
+display: none; /* Initially hidden until logged in */
+
+}
+
+button {
+
+background-color: #007bff;
+
+color: white;
+
+border: none;
+
+padding: 10px 20px;
+
+margin: 5px;
+
+border-radius: 5px;
+
+cursor: pointer;
+
+font-size: 16px;
+
+transition: background-color 0.3s;
+
+}
+
+button:hover {
+
+background-color: #0056b3;
+
+}
+
+input {
+
+margin: 10px;
+
+padding: 8px;
+
+}
+
+</style>
 </head>
 <body>
     <div class="login">
@@ -48,13 +80,29 @@
         <p id="loginMessage"></p>
     </div>
 
-    <div class="container" id="downloadContainer" style="display: none;">
-        <h1>File Download</h1>
-        <p id="creditDisplay"></p>
-        <button onclick="subtractCredits()">Download File</button>
-        <p id="message"></p>
-    </div>
-
+    <div class="container" id="downloadContainer">
+    <h1>File Download</h1>
+    <p id="creditDisplay"></p>
+    <button onclick="downloadFile('downloads/Infinix_Hot_12_Play.zip')">Infinix Hot 12 Play</button>
+    <button onclick="downloadFile('downloads/Realme_Note_50.zip')">Realme Note 50</button>
+    <button onclick="downloadFile('downloads/Realme_Narzo_50i_Prime.zip')">Realme Narzo 50i Prime</button>
+    <button onclick="downloadFile('downloads/Realme_C53.zip')">Realme C53</button>
+    <button onclick="downloadFile('downloads/Realme_C51.zip')">Realme C51</button>
+    <button onclick="downloadFile('downloads/Realme_C35.zip')">Realme C35</button>
+    <button onclick="downloadFile('downloads/Realme_C33.zip')">Realme C33</button>
+    <button onclick="downloadFile('downloads/Realme_C31.zip')">Realme C31</button>
+    <button onclick="downloadFile('downloads/Tecno_Spark_8C.zip')">Tecno Spark 8C</button>
+    <button onclick="downloadFile('downloads/Infinix_Hot_12_Pro.zip')">Infinix Hot 12 Pro</button>
+    <button onclick="downloadFile('downloads/Infinix_Hot_30i.zip')">Infinix Hot 30i</button>
+    <button onclick="downloadFile('downloads/Itel_Vision_3.zip')">Itel Vision 3</button>
+    <button onclick="downloadFile('downloads/Itel_Vision_3_Plus.zip')">Itel Vision 3 Plus</button>
+    <button onclick="downloadFile('downloads/Itel_S23.zip')">Itel S23</button>
+    <button onclick="downloadFile('downloads/Itel_P40+.zip')">Itel P40+</button>
+    <button onclick="downloadFile('downloads/Universal_Unlock.zip')">Universal Unlock</button>
+    <button onclick="downloadFile('downloads/Itel_Vision_5.zip')">Itel Vision 5</button>
+    <button onclick="downloadFile('downloads/Realme_C21y.zip')">Realme C21y</button>
+    <p id="message"></p>
+</div>
     <div id="cookieConsent">
         This website uses cookies to ensure you get the best experience. 
         <button id="acceptCookies">Accept Cookies</button>
